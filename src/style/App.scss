@@ -3,7 +3,10 @@
     padding: 0;
 }
 
-h1 {
-    color:black;
-    background-color: pink;
+.flex-column-center {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //background-color: lightgrey;
 }
