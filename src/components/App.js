@@ -4,7 +4,7 @@ import Main from './Main'
 
 function App() {
   return (
-    <Main cnx="FALSE" cur="SIGNUP"/>
+    <Main cnx="FALSE" cur="SIGNIN"/>
     );
 }
 

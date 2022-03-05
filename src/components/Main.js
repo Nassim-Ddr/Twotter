@@ -14,6 +14,8 @@ class Main extends React.Component {
     }
   }
 
+  // CREATE FUNCTIONS : GOTOSIGNIN GOTOSIGNUP GOTOHOME GOTODEFAULT
+
   render() {
     if (this.state.cnx === "TRUE") {
       return (
