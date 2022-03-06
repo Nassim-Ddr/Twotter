@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/App.css';
-import Default from './default';
+import Default from './Default';
 import Signin from './Signin';
 import Signup from './Signup';
 import Home from './Home';

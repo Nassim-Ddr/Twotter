@@ -10,14 +10,52 @@
     background-color: lightgrey;
 }
 
+//VARIABLES *******************************
+//BREAK POINTS :
+$xs: 0px; //Extra-small
+$sm: 600px; //Small
+$md: 900px; //Medium
+$lg: 1200px; //Large
+$xl: 1536px; //Extra large
+//PRIMARY
+$Moderateblue: hsl(238, 40%, 52%);
+$SoftRed: hsl(358, 79%, 66%);
+$Lightgrayishblue: hsl(239, 57%, 85%);
+$Palered: hsl(357, 100%, 86%);
+//Neutral
+$Darkblue: hsl(212, 24%, 26%);
+$GrayishBlue: hsl(211, 10%, 45%);
+$Lightgray: hsl(223, 19%, 93%);
+$Verylightgray: hsl(228, 33%, 97%);
+$White: hsl(0, 0%, 100%);
+
 .GridItem {
     background-color: red;
 }
 
-.Item {
+.Menu {
     background-color: pink;
+
+
+    @media (max-width: $md) {
+        .MuiListItemText-root{
+            display: none;
+        } 
+        .MuiListItemButton-root {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .MuiListItemIcon-root {
+            justify-content: center;
+        }
+        
+    }
 }
 
 .Grid {
     background-color: grey;
+}
+.blue {
+    background-color: blue;
 }

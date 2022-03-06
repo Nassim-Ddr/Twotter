@@ -1,27 +1,20 @@
 import React from 'react';
-import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
+import Menu from './Menu'
 
 class Home extends React.Component {
     render() {
         return (
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container  direction="column" justifyContent="center" spacing={2} className='Grid'>
-                    <Grid item className='GridItem'>
-                        <div className='Item'>xs=8</div>
+                <CssBaseline />
+                <Grid container  direction="row" justifyContent="center" className='Grid'>
+                    <Grid item className='GridItem' xs={2} md={4}>
+                        <Menu />
                     </Grid>
-                    <Grid item className='GridItem'>
-                        <div className='Item'>xs=4</div>
-                    </Grid>
-                    <Grid item className='GridItem'>
-                        <div className='Item'>xs=4</div>
-                    </Grid>
-                    <Grid item className='GridItem'>
-                        <div className='Item'>xs=8</div>
+                    <Grid item className='GridItem 'xs={10} md={8}>
+                        <div className='blue'>THIS IS THE MAIN CONTENT OF THE PAGE (Mur or Profile)</div>
                     </Grid>
                 </Grid>
             </Box>

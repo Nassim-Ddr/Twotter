@@ -14,10 +14,27 @@
   background-color: red;
 }
 
-.Item {
+.Menu {
   background-color: pink;
+}
+@media (max-width: 900px) {
+  .Menu .MuiListItemText-root {
+    display: none;
+  }
+  .Menu .MuiListItemButton-root {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .Menu .MuiListItemIcon-root {
+    justify-content: center;
+  }
 }
 
 .Grid {
   background-color: grey;
+}
+
+.blue {
+  background-color: blue;
 }/*# sourceMappingURL=App.css.map */
