@@ -6,8 +6,26 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
+import HomeIcon from '@mui/icons-material/Home'
+import PersonIcon from '@mui/icons-material/Person'
+import SearchIcon from '@mui/icons-material/Search'
+
+import ProfileItemList from './ProfileItemList';
+
+const handleProfile = (event) => {
+    event.preventDefault();
+    console.log("PROFILE");
+};
+
+const handleSearch = (event) => {
+    event.preventDefault();
+    console.log("SEARCH");
+};
+
+const handleHome = (event) => {
+    event.preventDefault();
+    console.log("HOME");
+};
 
 class Menu extends React.Component {
     render() {
@@ -15,20 +33,30 @@ class Menu extends React.Component {
             <Box className='Menu'>
                 <nav aria-label="main mailbox folders">
                     <List>
+                        <ProfileItemList />
+                        <Divider />
                         <ListItem disablePadding>
-                            <ListItemButton>
+                            <ListItemButton onClick={handleProfile}>
                                 <ListItemIcon>
-                                    <InboxIcon />
+                                    <PersonIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Inbox" />
+                                <ListItemText primary="Profile" />
                             </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemButton>
+                            <ListItemButton onClick={handleSearch}>
                                 <ListItemIcon>
-                                    <DraftsIcon />
+                                    <SearchIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Drafts" />
+                                <ListItemText primary="Search" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                            <ListItemButton onClick={handleHome}>
+                                <ListItemIcon>
+                                    <HomeIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Home" />
                             </ListItemButton>
                         </ListItem>
                     </List>

@@ -34,7 +34,7 @@ $White: hsl(0, 0%, 100%);
 }
 
 .Menu {
-    background-color: pink;
+    background-color: $Verylightgray;
 
 
     @media (max-width: $md) {
@@ -47,6 +47,10 @@ $White: hsl(0, 0%, 100%);
             padding-right: 0;
         }
         .MuiListItemIcon-root {
+            justify-content: center;
+        }
+        .MuiListItemAvatar-root {
+            display: flex;
             justify-content: center;
         }
         

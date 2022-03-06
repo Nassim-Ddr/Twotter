@@ -9,8 +9,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cnx : props.cnx,
-      cur : props.cur
+      cnx: props.cnx,
+      cur: props.cur
     }
   }
 
@@ -39,5 +39,5 @@ class Main extends React.Component {
     }
   }
 }
-  
+
 export default Main;
