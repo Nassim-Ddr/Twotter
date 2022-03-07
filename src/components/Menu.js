@@ -12,6 +12,8 @@ import SearchIcon from '@mui/icons-material/Search'
 
 import ProfileItemList from './ProfileItemList';
 
+import '../style/Menu.css';
+
 const handleProfile = (event) => {
     event.preventDefault();
     console.log("PROFILE");

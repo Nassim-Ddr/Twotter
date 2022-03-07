@@ -1,0 +1,24 @@
+@use "variables" as *;
+.Menu {
+    background-color: $Verylightgray;
+
+
+    @media (max-width: $md) {
+        .MuiListItemText-root{
+            display: none;
+        } 
+        .MuiListItemButton-root {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .MuiListItemIcon-root {
+            justify-content: center;
+        }
+        .MuiListItemAvatar-root {
+            display: flex;
+            justify-content: center;
+        }
+        
+    }
+}

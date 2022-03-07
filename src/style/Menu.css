@@ -1,0 +1,20 @@
+.Menu {
+  background-color: #f5f6fa;
+}
+@media (max-width: 900px) {
+  .Menu .MuiListItemText-root {
+    display: none;
+  }
+  .Menu .MuiListItemButton-root {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .Menu .MuiListItemIcon-root {
+    justify-content: center;
+  }
+  .Menu .MuiListItemAvatar-root {
+    display: flex;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=Menu.css.map */
