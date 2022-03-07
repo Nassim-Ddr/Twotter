@@ -3,7 +3,7 @@ import '../style/App.css';
 import Default from './Default';
 import Signin from './Signin';
 import Signup from './Signup';
-import Home from './Home';
+import LoggedIn from './LoggedIn';
 
 class Main extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Main extends React.Component {
   render() {
     if (this.state.cnx === "TRUE") {
       return (
-        <Home />
+        <LoggedIn content="Home"/>
       );
     }
     else if (this.state.cur === "SIGNIN") {

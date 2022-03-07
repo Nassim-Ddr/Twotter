@@ -1,25 +1,10 @@
 import React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Menu from './Menu'
 
 class Home extends React.Component {
+    // I LL PROBABLY NEED TO ADD A STATE FOR THE USER ID
     render() {
-        return (
-            <Box sx={{ flexGrow: 1 }}>
-                <CssBaseline />
-                <Grid container  direction="row" justifyContent="center" className='Grid'>
-                    <Grid item className='GridItem' xs={2}>
-                        <Menu />
-                    </Grid>
-                    <Grid item className='GridItem 'xs={10}>
-                        <div className='blue'>THIS IS THE MAIN CONTENT OF THE PAGE (Mur or Profile)</div>
-                    </Grid>
-                </Grid>
-            </Box>
-        );
+        return (<h1>sosig</h1>);
     }
 }
 
-export default Home
+export default Home;

@@ -7,17 +7,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightgrey;
-}
-
-.GridItem {
-  background-color: red;
-}
-
-.Grid {
-  background-color: grey;
-}
-
-.blue {
-  background-color: blue;
 }/*# sourceMappingURL=App.css.map */
