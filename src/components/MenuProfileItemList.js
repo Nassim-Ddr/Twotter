@@ -20,7 +20,7 @@ export default function ProfileItemList() {
         <ListItem disablePadding>
             <ListItemButton onClick={handleClick}>
                 <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                    <Avatar alt="Remy Sharp" src="1.jpg" />
                 </ListItemAvatar>
                 <ListItemText primary="Nassim AHMED ALI" secondary="@AA-Nassim" />
             </ListItemButton>

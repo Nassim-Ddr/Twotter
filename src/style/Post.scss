@@ -1,6 +1,5 @@
 @use "variables" as *;
 
-
 .PostContainer {
     background-color: green;
     padding: 1rem;
@@ -21,5 +20,27 @@
     }
     .ContentContainer {
         padding-left: 1rem;
+
+        .PostHeaderContainer {
+            background-color: pink;
+            display: flex;
+            justify-content: space-around;
+            .UserName {
+                color: $Darkblue;
+                font-weight: $fw-medium;
+            }
+            .PostTime {
+                margin-left: 15px;
+                color: $GrayishBlue;
+            }
+        }
+
+        .PostMessageContainer {
+            background-color: cyan;
+        }
     }
+}
+
+.Hide {
+    display: none;
 }

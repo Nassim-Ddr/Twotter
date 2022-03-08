@@ -19,4 +19,24 @@
 }
 .PostContainer .ContentContainer {
   padding-left: 1rem;
+}
+.PostContainer .ContentContainer .PostHeaderContainer {
+  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+}
+.PostContainer .ContentContainer .PostHeaderContainer .UserName {
+  color: #324152;
+  font-weight: 500;
+}
+.PostContainer .ContentContainer .PostHeaderContainer .PostTime {
+  margin-left: 15px;
+  color: #67727e;
+}
+.PostContainer .ContentContainer .PostMessageContainer {
+  background-color: cyan;
+}
+
+.Hide {
+  display: none;
 }/*# sourceMappingURL=Post.css.map */

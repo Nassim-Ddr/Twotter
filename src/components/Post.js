@@ -4,6 +4,9 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import PostScore from './PostScore'
+import PostHeader from './PostHeader';
+import PostMessage from './PostMessage';
+
 
 import '../style/Post.css'
 
@@ -12,31 +15,22 @@ class Post extends React.Component {
         super(props);
         this.state = {
             userData: props.userData, 
-            commentData: props.commentData
+            postData: props.postData
         }
     }
 
     render() {
-        //Grid two columns
-        //Column 1 : scor
-        //Column 2 : 
-        //Grid 2 rows : 
-        //Row 1 : Header (Profile pic, time, Buttons)
-        //Row 2 : MEssage
         return (
             <Grid container className='PostContainer'>
                 <Grid item xs={1}>
-                    {/* SCORE COMPONENT */}
                     <PostScore score="30"/>
                 </Grid>
                 <Grid container direction='column' item xs={11} className="ContentContainer">
                     <Grid item>
-                        {/* HEADER */}
-                        HEADER OF THE MSG
+                        <PostHeader userData={this.state.userData} commentData={this.state.postData}/>
                     </Grid>
                     <Grid item>
-                        {/* MESSAGE */}
-                        MESSAGE
+                        <PostMessage commentData={this.state.postData}/>
                     </Grid>
                 </Grid>
 
