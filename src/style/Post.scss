@@ -24,7 +24,10 @@
         .PostHeaderContainer {
             background-color: pink;
             display: flex;
-            justify-content: space-around;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             .UserName {
                 color: $Darkblue;
                 font-weight: $fw-medium;
@@ -33,14 +36,23 @@
                 margin-left: 15px;
                 color: $GrayishBlue;
             }
+            .BtnContainer {
+                margin-left: auto;
+                .MuiBox-root {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                }
+            }
+            .Hide {
+                display: none;
+            }
         }
 
         .PostMessageContainer {
+            padding: 0.5rem;
             background-color: cyan;
         }
     }
-}
-
-.Hide {
-    display: none;
 }

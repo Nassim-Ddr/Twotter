@@ -30,12 +30,19 @@ const handleHome = (event) => {
 };
 
 class Menu extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            userData: props.userData
+        }
+    }
+
     render() {
         return (
             <Box className='Menu'>
                 <nav aria-label="main mailbox folders">
                     <List>
-                        <MenuProfileItemList />
+                        <MenuProfileItemList userData ={this.state.userData}/>
                         <Divider />
                         <ListItem disablePadding>
                             <ListItemButton onClick={handleProfile}>

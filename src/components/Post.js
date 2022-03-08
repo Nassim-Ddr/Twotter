@@ -23,14 +23,14 @@ class Post extends React.Component {
         return (
             <Grid container className='PostContainer'>
                 <Grid item xs={1}>
-                    <PostScore score="30"/>
+                    <PostScore score={this.state.postData.score}/>
                 </Grid>
                 <Grid container direction='column' item xs={11} className="ContentContainer">
                     <Grid item>
-                        <PostHeader userData={this.state.userData} commentData={this.state.postData}/>
+                        <PostHeader userData={this.state.userData} postData={this.state.postData}/>
                     </Grid>
                     <Grid item>
-                        <PostMessage commentData={this.state.postData}/>
+                        <PostMessage postData={this.state.postData}/>
                     </Grid>
                 </Grid>
 

@@ -8,20 +8,23 @@ class PostHeader extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            userData: props.userData, 
-            postData : props.postData
+            userData: props.userData,
+            postData: props.postData
         }
-    } 
+    }
 
     render() {
         return (
             <Box className="PostHeaderContainer">
-                <Avatar alt="AHMED ALI NASSIM" src="1.jpg"/>
-                <div className='UserName'> AHMED ALI Nassim</div>
-                <div className="PostTime">10 min ago</div>
-                <PostHeaderBtn currentUser="SOSIG"/>
+
+                <Avatar alt="AHMED ALI NASSIM" src="1.jpg" />
+                <div className='UserName'>{this.state.postData.userName}</div>
+                <div className="PostTime">{this.state.postData.postTime - new Date()}</div>
+                <div className='BtnContainer'>
+                    <PostHeaderBtn currentUser={this.state.userData.id === this.state.postData.userID ? "TRUE" : ""} />
+                </div>
             </Box>
-        ); 
+        );
     }
 
 }

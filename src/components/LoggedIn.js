@@ -5,13 +5,19 @@ import Box from '@mui/material/Box';
 import Menu from './Menu';
 import Home from './Home';
 
+const userData = {
+    id: "@AA_Nassim",
+    name: "AHMED ALI Nassim", 
+    ppic: "URL TO PIC"
+}
+
 class LoggedIn extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             content: props.content,
-            userData : props.userData
+            userData : userData
         }
     }
 
@@ -23,12 +29,12 @@ class LoggedIn extends React.Component {
                 <CssBaseline />
                 <Grid container direction="row" justifyContent="center" className='Grid'>
                     <Grid item className='GridItem' xs={2} >
-                        <Menu userData={this.userData}/>
+                        <Menu userData={this.state.userData}/>
                     </Grid>
                     <Grid item className='GridItem ' xs={10}>
                         {this.state.content === "Profile" && <h1>Profile</h1>}
                         {this.state.content === "Search" && <h1>Search</h1>}
-                        {this.state.content === "Home" && <Home />}
+                        {this.state.content === "Home" && <Home userData={this.state.userData} />}
                     </Grid>
                 </Grid>
             </Box>);

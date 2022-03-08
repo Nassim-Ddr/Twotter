@@ -5,23 +5,37 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import '../style/Home.css';
 
-const userData = {
-
+const postData = {
+    userID: "@AA_Nassim",
+    userName: "Nassim AHMED ALI",
+    postTime: new Date('2022-2-17T03:24:00'),
+    content: "Hellow there hope you re doing well !",
+    score: 30
 }
 
-const postData = {
-    
+const postData2 = {
+    userID: "@AA_Reda",
+    userName: "Reda AHMED ALI",
+    postTime: new Date('2022-2-17T03:24:00'),
+    content: "Oi!",
+    score: 823
 }
 
 class Home extends React.Component {
-    // I LL PROBABLY NEED TO ADD A STATE FOR MSG LIST
+    constructor(props) {
+        super(props)
+        this.state = {
+            userData: props.userData
+        }
+    }
     render() {
         return (
             //Post field + button
             //Messages
             <Box sx={{ flexGrow: 1 }}  className='mainContent'>
                 <CssBaseline />
-                <Post />
+                <Post userData={this.state.userData} postData={postData}/>
+                <Post userData={this.state.userData} postData={postData2}/>
             </Box>
         );
     }

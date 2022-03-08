@@ -12,7 +12,7 @@ class PostMessage extends React.Component {
     render() {
         return(
             <Box className="PostMessageContainer">
-                CECEI EST UN MESSAGE
+                {this.state.postData.content}
             </Box>
             
         );

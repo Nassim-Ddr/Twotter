@@ -19,13 +19,13 @@ class PostHeaderBtn extends React.Component {
 
         return (
             <Box>
-                <Button variant="contained" className={`${!this.state.currentUser ? "" : "display--none"}`}>
+                <Button size="small" variant="contained" className={`${!this.state.currentUser ? "" : "Hide"}`}>
                     Reply
                 </Button>
-                <Button variant="contained" className={`${this.state.currentUser ? "" : "display--none"}`}>
+                <Button size="small" variant="contained" className={`${this.state.currentUser ? "" : "Hide"}`}>
                     Edit
                 </Button>
-                <Button variant="contained" color="error" className={`${this.state.currentUser ? "" : "display--none"}`}>
+                <Button size="small" variant="contained" color="error" className={`${this.state.currentUser ? "" : "Hide"}`}>
                     Delete
                 </Button>
             </Box>

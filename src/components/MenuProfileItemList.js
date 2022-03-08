@@ -7,8 +7,9 @@ import ListItemText from '@mui/material/ListItemText';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export default function ProfileItemList() {
+export default function ProfileItemList(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [userData, setUserData] = React.useState(props.userData);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -20,9 +21,9 @@ export default function ProfileItemList() {
         <ListItem disablePadding>
             <ListItemButton onClick={handleClick}>
                 <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="1.jpg" />
+                    <Avatar alt={userData.name} src={userData.ppic} />
                 </ListItemAvatar>
-                <ListItemText primary="Nassim AHMED ALI" secondary="@AA-Nassim" />
+                <ListItemText primary={userData.name} secondary={userData.id} />
             </ListItemButton>
             <Menu
                 anchorEl={anchorEl}
