@@ -1,0 +1,22 @@
+.PostContainer {
+  background-color: green;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.PostContainer .ScoreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.PostContainer .ScoreContainer .Score {
+  border-radius: 20px;
+  background-color: red;
+  display: block;
+}
+.PostContainer .ScoreContainer .Score * {
+  width: 100%;
+}
+.PostContainer .ContentContainer {
+  padding-left: 1rem;
+}/*# sourceMappingURL=Post.css.map */

@@ -1,5 +1,6 @@
 .Menu {
   background-color: #f5f6fa;
+  height: 100%;
 }
 @media (max-width: 900px) {
   .Menu .MuiListItemText-root {

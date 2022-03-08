@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+
+.PostContainer {
+    background-color: green;
+    padding: 1rem;
+    border-radius: 10px;
+    .ScoreContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .Score {
+            border-radius: 20px;
+            background-color: red;
+            display: block;
+            * {
+                width: 100%;
+            }
+        }
+    }
+    .ContentContainer {
+        padding-left: 1rem;
+    }
+}

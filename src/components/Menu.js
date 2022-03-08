@@ -10,7 +10,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import PersonIcon from '@mui/icons-material/Person'
 import SearchIcon from '@mui/icons-material/Search'
 
-import ProfileItemList from './ProfileItemList';
+import MenuProfileItemList from './MenuProfileItemList';
 
 import '../style/Menu.css';
 
@@ -35,7 +35,7 @@ class Menu extends React.Component {
             <Box className='Menu'>
                 <nav aria-label="main mailbox folders">
                     <List>
-                        <ProfileItemList />
+                        <MenuProfileItemList />
                         <Divider />
                         <ListItem disablePadding>
                             <ListItemButton onClick={handleProfile}>

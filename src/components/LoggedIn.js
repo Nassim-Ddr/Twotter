@@ -10,7 +10,8 @@ class LoggedIn extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: props.content
+            content: props.content,
+            userData : props.userData
         }
     }
 
@@ -21,8 +22,8 @@ class LoggedIn extends React.Component {
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
                 <Grid container direction="row" justifyContent="center" className='Grid'>
-                    <Grid item className='GridItem' xs={2}>
-                        <Menu />
+                    <Grid item className='GridItem' xs={2} >
+                        <Menu userData={this.userData}/>
                     </Grid>
                     <Grid item className='GridItem ' xs={10}>
                         {this.state.content === "Profile" && <h1>Profile</h1>}

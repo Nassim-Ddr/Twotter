@@ -5,6 +5,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import '../style/Home.css';
 
+const userData = {
+
+}
+
+const postData = {
+    
+}
+
 class Home extends React.Component {
     // I LL PROBABLY NEED TO ADD A STATE FOR MSG LIST
     render() {
@@ -13,7 +21,7 @@ class Home extends React.Component {
             //Messages
             <Box sx={{ flexGrow: 1 }}  className='mainContent'>
                 <CssBaseline />
-                <h1>test</h1>
+                <Post />
             </Box>
         );
     }
