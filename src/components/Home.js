@@ -1,9 +1,14 @@
 import React from 'react';
+import Post from './Post';
 
 class Home extends React.Component {
-    // I LL PROBABLY NEED TO ADD A STATE FOR THE USER ID
+    // I LL PROBABLY NEED TO ADD A STATE FOR MSG LIST
     render() {
-        return (<h1>sosig</h1>);
+        return (
+            //Post field + button
+            //Messages
+            <h1>sosig</h1>
+        );
     }
 }
 

@@ -13,6 +13,13 @@ class Post extends React.Component {
     }
     
     render() {
-
+        //Grid two columns
+            //Column 1 : scor
+            //Column 2 : 
+                //Grid 2 rows : 
+                    //Row 1 : Header (Profile pic, time, Buttons)
+                    //Row 2 : MEssage
     }
 }
+
+export default Post;
