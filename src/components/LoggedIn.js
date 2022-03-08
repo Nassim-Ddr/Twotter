@@ -15,36 +15,9 @@ class LoggedIn extends React.Component {
     }
 
     render() {
-        if (this.state.content === "Profile")
-            return (
-                <Box sx={{ flexGrow: 1 }}>
-                    <CssBaseline />
-                    <Grid container direction="row" justifyContent="center" className='Grid'>
-                        <Grid item className='GridItem' xs={2}>
-                            <Menu />
-                        </Grid>
-                        <Grid item className='GridItem ' xs={10}>
-                            <h1>Profile</h1>
-                        </Grid>
-                    </Grid>
-                </Box>
-            );
 
-        else if (this.state.content === "Search")
-            return (
-                <Box sx={{ flexGrow: 1 }}>
-                    <CssBaseline />
-                    <Grid container direction="row" justifyContent="center" className='Grid'>
-                        <Grid item className='GridItem' xs={2}>
-                            <Menu />
-                        </Grid>
-                        <Grid item className='GridItem ' xs={10}>
-                            <h1>Search</h1>
-                        </Grid>
-                    </Grid>
-                </Box>
-            );
-        else return (
+
+        return (
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
                 <Grid container direction="row" justifyContent="center" className='Grid'>
@@ -52,11 +25,54 @@ class LoggedIn extends React.Component {
                         <Menu />
                     </Grid>
                     <Grid item className='GridItem ' xs={10}>
-                        <Home />
+                        {this.state.content === "Profile" && <h1>Profile</h1>}
+                        {this.state.content === "Search" && <h1>Search</h1>}
+                        {this.state.content === "Home" && <Home />}
                     </Grid>
                 </Grid>
-            </Box>
-        );
+            </Box>);
+        // if (this.state.content === "Profile")
+        //     return (
+        //         <Box sx={{ flexGrow: 1 }}>
+        //             <CssBaseline />
+        //             <Grid container direction="row" justifyContent="center" className='Grid'>
+        //                 <Grid item className='GridItem' xs={2}>
+        //                     <Menu />
+        //                 </Grid>
+        //                 <Grid item className='GridItem ' xs={10}>
+        //                     <h1>Profile</h1>
+        //                 </Grid>
+        //             </Grid>
+        //         </Box>
+        //     );
+
+        // else if (this.state.content === "Search")
+        //     return (
+        //         <Box sx={{ flexGrow: 1 }}>
+        //             <CssBaseline />
+        //             <Grid container direction="row" justifyContent="center" className='Grid'>
+        //                 <Grid item className='GridItem' xs={2}>
+        //                     <Menu />
+        //                 </Grid>
+        //                 <Grid item className='GridItem ' xs={10}>
+        //                     <h1>Search</h1>
+        //                 </Grid>
+        //             </Grid>
+        //         </Box>
+        //     );
+        // else return (
+        //     <Box sx={{ flexGrow: 1 }}>
+        //         <CssBaseline />
+        //         <Grid container direction="row" justifyContent="center" className='Grid'>
+        //             <Grid item className='GridItem' xs={2}>
+        //                 <Menu />
+        //             </Grid>
+        //             <Grid item className='GridItem ' xs={10}>
+        //                 <Home />
+        //             </Grid>
+        //         </Grid>
+        //     </Box>
+        // );
     }
 }
 
