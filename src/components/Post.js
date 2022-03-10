@@ -22,10 +22,10 @@ class Post extends React.Component {
     render() {
         return (
             <Grid container className='PostContainer'>
-                <Grid item xs={1}>
+                <Grid item xs={2} md={1}>
                     <PostScore score={this.state.postData.score}/>
                 </Grid>
-                <Grid container direction='column' item xs={11} className="ContentContainer">
+                <Grid container direction='column' item xs={10} md={11} className="ContentContainer">
                     <Grid item>
                         <PostHeader userData={this.state.userData} postData={this.state.postData}/>
                     </Grid>

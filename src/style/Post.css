@@ -1,7 +1,8 @@
 .PostContainer {
-  background-color: green;
+  background-color: white;
   padding: 1rem;
   border-radius: 10px;
+  align-items: center;
 }
 .PostContainer .ScoreContainer {
   display: flex;
@@ -10,9 +11,17 @@
   text-align: center;
 }
 .PostContainer .ScoreContainer .Score {
+  width: 75%;
   border-radius: 20px;
-  background-color: red;
+  background-color: #f5f6fa;
   display: block;
+  font-weight: 700;
+  color: #5457b6;
+}
+@media (max-width: 900px) {
+  .PostContainer .ScoreContainer .Score {
+    width: 100%;
+  }
 }
 .PostContainer .ScoreContainer .Score * {
   width: 100%;
@@ -21,12 +30,27 @@
   padding-left: 1rem;
 }
 .PostContainer .ContentContainer .PostHeaderContainer {
-  background-color: pink;
+  background-color: transparent;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+@media (max-width: 600px) {
+  .PostContainer .ContentContainer .PostHeaderContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer {
+    width: 100%;
+  }
+  .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer .MuiBox-root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .PostContainer .ContentContainer .PostHeaderContainer .UserName {
   color: #324152;
@@ -49,6 +73,7 @@
   display: none;
 }
 .PostContainer .ContentContainer .PostMessageContainer {
+  width: 100%;
   padding: 0.5rem;
-  background-color: cyan;
+  background-color: transparent;
 }/*# sourceMappingURL=Post.css.map */

@@ -1,18 +1,26 @@
 @use "variables" as *;
 
 .PostContainer {
-    background-color: green;
+    background-color: $White;
     padding: 1rem;
     border-radius: 10px;
+    align-items: center;
     .ScoreContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+
         .Score {
+            width: 75%;
             border-radius: 20px;
-            background-color: red;
+            background-color: $Verylightgray;
             display: block;
+            font-weight: $fw-bold;
+            color: $Moderateblue;
+            @media (max-width: $md) {
+                width: 100%;
+            }
             * {
                 width: 100%;
             }
@@ -20,14 +28,27 @@
     }
     .ContentContainer {
         padding-left: 1rem;
-
         .PostHeaderContainer {
-            background-color: pink;
+            background-color: transparent;
             display: flex;
             gap: 10px;
             justify-content: center;
             align-items: center;
             text-align: center;
+            @media (max-width: $sm) {
+                display: flex;
+                flex-direction: column;
+                
+                .BtnContainer {
+                    width: 100%;
+                    .MuiBox-root {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }   
             .UserName {
                 color: $Darkblue;
                 font-weight: $fw-medium;
@@ -51,8 +72,9 @@
         }
 
         .PostMessageContainer {
+            width: 100%;
             padding: 0.5rem;
-            background-color: cyan;
+            background-color: transparent;
         }
     }
 }

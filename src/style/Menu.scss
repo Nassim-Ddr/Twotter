@@ -1,8 +1,8 @@
 @use "variables" as *;
 .Menu {
-    background-color: $Verylightgray;
+    background-color: $White;
     height: 100%;
-
+    
     @media (max-width: $md) {
         .MuiListItemText-root{
             display: none;

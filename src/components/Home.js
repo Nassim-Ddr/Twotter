@@ -9,16 +9,16 @@ const postData = {
     userID: "@AA_Nassim",
     userName: "Nassim AHMED ALI",
     postTime: new Date('2022-2-17T03:24:00'),
-    content: "Hellow there hope you re doing well !",
-    score: 30
+    content: "Hellow there hope you re doing well ! Hellow there hope you re doing well ! Hellow there hope you re doing well ! Hellow there hope you re doing well !",
+    score: 347
 }
 
 const postData2 = {
     userID: "@AA_Reda",
     userName: "Reda AHMED ALI",
     postTime: new Date('2022-2-17T03:24:00'),
-    content: "Oi!",
-    score: 823
+    content: "Oi! Hellow there hope you re doing well !",
+    score: 8222
 }
 
 class Home extends React.Component {
