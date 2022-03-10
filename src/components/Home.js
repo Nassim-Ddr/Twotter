@@ -36,6 +36,15 @@ class Home extends React.Component {
                 <CssBaseline />
                 <Post userData={this.state.userData} postData={postData}/>
                 <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                <Post userData={this.state.userData} postData={postData2}/>
+                
             </Box>
         );
     }

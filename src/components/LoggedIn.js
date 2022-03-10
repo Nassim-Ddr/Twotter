@@ -7,7 +7,7 @@ import Home from './Home';
 
 const userData = {
     id: "@AA_Nassim",
-    name: "AHMED ALI Nassim", 
+    name: "AHMED ALI Nassim",
     ppic: "URL TO PIC"
 }
 
@@ -17,7 +17,7 @@ class LoggedIn extends React.Component {
         super(props);
         this.state = {
             content: props.content,
-            userData : userData
+            userData: userData
         }
     }
 
@@ -28,10 +28,12 @@ class LoggedIn extends React.Component {
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
                 <Grid container direction="row" justifyContent="center" className='Grid'>
-                    <Grid item className='GridItem' xs={2} >
-                        <Menu userData={this.state.userData}/>
+                    <Grid item xs={2} >
+                        <div className='sticky'>
+                            <Menu userData={this.state.userData} />
+                        </div>
                     </Grid>
-                    <Grid item className='GridItem ' xs={10}>
+                    <Grid item xs={10}>
                         {this.state.content === "Profile" && <h1>Profile</h1>}
                         {this.state.content === "Search" && <h1>Search</h1>}
                         {this.state.content === "Home" && <Home userData={this.state.userData} />}
