@@ -8,7 +8,7 @@ import '../style/Home.css';
 const postData = {
     userID: "@AA_Nassim",
     userName: "Nassim AHMED ALI",
-    postTime: new Date('2022-2-17T03:24:00'),
+    postTime: new Date(2022, 3, 4, 12, 32, 2),
     content: "Hellow there hope you re doing well ! Hellow there hope you re doing well ! Hellow there hope you re doing well ! Hellow there hope you re doing well !",
     score: 347
 }
@@ -16,7 +16,7 @@ const postData = {
 const postData2 = {
     userID: "@AA_Reda",
     userName: "Reda AHMED ALI",
-    postTime: new Date('2022-2-17T03:24:00'),
+    postTime: new Date(2022, 5, 24, 15, 2, 3),
     content: "Oi! Hellow there hope you re doing well !",
     score: 8222
 }
