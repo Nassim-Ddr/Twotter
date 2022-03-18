@@ -1,16 +1,20 @@
-.PostContainer {
+.MainPostContainer {
+  display: flex;
+  gap: 1rem;
+}
+.MainPostContainer .PostContainer {
   background-color: white;
   padding: 1rem;
   border-radius: 10px;
   align-items: center;
 }
-.PostContainer .ScoreContainer {
+.MainPostContainer .PostContainer .ScoreContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.PostContainer .ScoreContainer .Score {
+.MainPostContainer .PostContainer .ScoreContainer .Score {
   width: 75%;
   border-radius: 20px;
   background-color: #f5f6fa;
@@ -19,17 +23,17 @@
   color: #5457b6;
 }
 @media (max-width: 900px) {
-  .PostContainer .ScoreContainer .Score {
+  .MainPostContainer .PostContainer .ScoreContainer .Score {
     width: 100%;
   }
 }
-.PostContainer .ScoreContainer .Score * {
+.MainPostContainer .PostContainer .ScoreContainer .Score * {
   width: 100%;
 }
-.PostContainer .ContentContainer {
+.MainPostContainer .PostContainer .ContentContainer {
   padding-left: 1rem;
 }
-.PostContainer .ContentContainer .PostHeaderContainer {
+.MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer {
   background-color: transparent;
   display: flex;
   gap: 10px;
@@ -38,42 +42,51 @@
   text-align: center;
 }
 @media (max-width: 600px) {
-  .PostContainer .ContentContainer .PostHeaderContainer {
+  .MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer {
     display: flex;
     flex-direction: column;
   }
-  .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer {
+  .MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer {
     width: 100%;
   }
-  .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer .MuiBox-root {
+  .MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer .MuiBox-root {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
 }
-.PostContainer .ContentContainer .PostHeaderContainer .UserName {
+.MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .UserName {
   color: #324152;
   font-weight: 500;
 }
-.PostContainer .ContentContainer .PostHeaderContainer .PostTime {
+.MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .PostTime {
   margin-left: 15px;
   color: #67727e;
 }
-.PostContainer .ContentContainer .PostHeaderContainer .BtnContainer {
+.MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer {
   margin-left: auto;
 }
-.PostContainer .ContentContainer .PostHeaderContainer .BtnContainer .MuiBox-root {
+.MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer .MuiBox-root {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
-.PostContainer .ContentContainer .PostHeaderContainer .Hide {
+.MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .Hide {
   display: none;
 }
-.PostContainer .ContentContainer .PostMessageContainer {
+.MainPostContainer .PostContainer .ContentContainer .PostMessageContainer {
   width: 100%;
   padding: 0.5rem;
   background-color: transparent;
+}
+.MainPostContainer .ReplyContainer {
+  display: flex;
+  gap: 1rem;
+}
+.MainPostContainer .Devider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=Post.css.map */

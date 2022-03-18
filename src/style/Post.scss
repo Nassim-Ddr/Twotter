@@ -1,80 +1,96 @@
 @use "variables" as *;
 
-.PostContainer {
-    background-color: $White;
-    padding: 1rem;
-    border-radius: 10px;
-    align-items: center;
-    .ScoreContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+.MainPostContainer {
+    display: flex;
+    gap: 1rem;
 
-        .Score {
-            width: 75%;
-            border-radius: 20px;
-            background-color: $Verylightgray;
-            display: block;
-            font-weight: $fw-bold;
-            color: $Moderateblue;
-            @media (max-width: $md) {
-                width: 100%;
-            }
-            * {
-                width: 100%;
-            }
-        }
-    }
-    .ContentContainer {
-        padding-left: 1rem;
-        .PostHeaderContainer {
-            background-color: transparent;
+    .PostContainer {
+        background-color: $White;
+        padding: 1rem;
+        border-radius: 10px;
+        align-items: center;
+        .ScoreContainer {
             display: flex;
-            gap: 10px;
             justify-content: center;
             align-items: center;
             text-align: center;
-            @media (max-width: $sm) {
-                display: flex;
-                flex-direction: column;
-                
-                .BtnContainer {
+
+            .Score {
+                width: 75%;
+                border-radius: 20px;
+                background-color: $Verylightgray;
+                display: block;
+                font-weight: $fw-bold;
+                color: $Moderateblue;
+                @media (max-width: $md) {
                     width: 100%;
+                }
+                * {
+                    width: 100%;
+                }
+            }
+        }
+        .ContentContainer {
+            padding-left: 1rem;
+            .PostHeaderContainer {
+                background-color: transparent;
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                @media (max-width: $sm) {
+                    display: flex;
+                    flex-direction: column;
+
+                    .BtnContainer {
+                        width: 100%;
+                        .MuiBox-root {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+                .UserName {
+                    color: $Darkblue;
+                    font-weight: $fw-medium;
+                }
+                .PostTime {
+                    margin-left: 15px;
+                    color: $GrayishBlue;
+                }
+                .BtnContainer {
+                    margin-left: auto;
                     .MuiBox-root {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        justify-content: center;
+                        gap: 10px;
                     }
                 }
-            }   
-            .UserName {
-                color: $Darkblue;
-                font-weight: $fw-medium;
-            }
-            .PostTime {
-                margin-left: 15px;
-                color: $GrayishBlue;
-            }
-            .BtnContainer {
-                margin-left: auto;
-                .MuiBox-root {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 10px;
+                .Hide {
+                    display: none;
                 }
             }
-            .Hide {
-                display: none;
+
+            .PostMessageContainer {
+                width: 100%;
+                padding: 0.5rem;
+                background-color: transparent;
             }
         }
+    }
 
-        .PostMessageContainer {
-            width: 100%;
-            padding: 0.5rem;
-            background-color: transparent;
-        }
+    .ReplyContainer {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .Devider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
