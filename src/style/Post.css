@@ -84,6 +84,7 @@
 .MainPostContainer .ReplyContainer {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 .MainPostContainer .Devider {
   display: flex;

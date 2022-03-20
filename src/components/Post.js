@@ -47,9 +47,9 @@ class Post extends React.Component {
                         </Grid>
                     </Grid>
                 </Grid>
-                {!this.state.isReply &&
+                {/* {!this.state.isReply &&
                     <Grid item container directon="row">
-                        <Grid item container xs={1} className="Devider">
+                        <Grid item container xs={1} className="Devider ">
                             <Divider orientation="vertical" flexItem sx={{ borderRightWidth: 2.5 }} />
                         </Grid>
 
@@ -58,7 +58,7 @@ class Post extends React.Component {
                             <Post userData={this.state.userData} postData={replyData} isReply={true} />
                         </Grid>
                     </Grid>
-                }
+                } */}
             </Grid>
         );
     }

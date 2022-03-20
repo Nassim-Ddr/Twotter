@@ -1,3 +1,18 @@
-.red {
-  background-color: red;
+.ProfileContainer {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  align-items: center;
+}
+.ProfileContainer .Info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.ProfileContainer .BioContainer {
+  padding: 1rem;
+}
+.ProfileContainer .Hide {
+  display: none;
 }/*# sourceMappingURL=Profile.css.map */

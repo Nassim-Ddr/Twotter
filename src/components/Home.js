@@ -3,8 +3,6 @@ import Post from './Post';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import '../style/Home.css';
-
 const postData = {
     userID: "@AA_Nassim",
     userName: "Nassim AHMED ALI",

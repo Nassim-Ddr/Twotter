@@ -1,5 +1,21 @@
 @use "variables" as *;
 
-.red{
-    background-color: red;
+.ProfileContainer {
+    background-color: $White;
+    border-radius: 10px;
+    padding: 1rem;
+    align-items: center;
+    .Info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .BioContainer {
+        padding: 1rem;
+    }
+    .Hide {
+        display: none;
+        
+    }
 }
