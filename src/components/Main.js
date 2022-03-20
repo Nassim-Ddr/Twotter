@@ -19,7 +19,7 @@ class Main extends React.Component {
   render() {
     if (this.state.cnx === "TRUE") {
       return (
-        <LoggedIn content="Home"/>
+        <LoggedIn content="Profile"/>
       );
     }
     else if (this.state.cur === "SIGNIN") {
