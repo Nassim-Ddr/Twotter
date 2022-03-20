@@ -3,6 +3,18 @@
   height: 100%;
 }
 @media (max-width: 900px) {
+  .Menu .HorizontalList {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
   .Menu .MuiListItemText-root {
     display: none;
   }

@@ -1,4 +1,4 @@
-import { Box, Grid, Avatar, ListItemText, Typography } from '@mui/material';
+import { Box, Grid, Avatar, ListItemText } from '@mui/material';
 import React, { useState } from 'react';
 import PRofileHeaderBtn from './ProfileHeaderBtn';
 
@@ -23,7 +23,7 @@ const ProfileHeader = (props) => {
                 </Grid>
             </Grid>
             <Grid container  wrap="nowrap" className="BioContainer" >
-                <Typography>{profileData.bio}</Typography>
+                <p>{profileData.bio}</p>
             </Grid>
         </Grid>
 

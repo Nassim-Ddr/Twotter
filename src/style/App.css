@@ -22,6 +22,11 @@
   gap: 1rem;
   background-color: #eaecf1;
 }
+@media (max-width: 900px) {
+  .mainContent {
+    padding: 0;
+  }
+}
 
 .Hide {
   display: none;

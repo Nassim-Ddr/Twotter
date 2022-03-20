@@ -24,16 +24,19 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <Box className='mainContent' sx={{overflow:'hidden'}}>
+            <Box className='mainContent' sx={{ overflow: 'hidden' }}>
                 <CssBaseline />
-                <Grid container className='ProfileContainer' direction={"column"}>
-                    <Grid container item>
-                        <ProfileHeader profileData={profileData} userData={this.state.userData}/>
+                <div className='ProfileContainer'>
+                    <Grid container className='ProfileContainer' direction={"column"}>
+                        <Grid container item xs={12}>
+                            <ProfileHeader profileData={profileData} userData={this.state.userData} />
+                        </Grid>
+                        <Grid item xs={12} className="Tabs">
+                            <ProfileTab />
+                        </Grid>
                     </Grid>
-                    <Grid item>
-                        <ProfileTab />
-                    </Grid>
-                </Grid>
+
+                </div>
             </Box>
         )
     }

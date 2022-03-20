@@ -40,8 +40,8 @@ class Menu extends React.Component {
     render() {
         return (
             <Box className='Menu'>
-                <nav aria-label="main mailbox folders">
-                    <List>
+                <nav aria-label="Profile Search Home">
+                    <List className='HorizontalList'>
                         <MenuProfileItemList userData ={this.state.userData}/>
                         <Divider />
                         <ListItem disablePadding>

@@ -29,13 +29,13 @@ class LoggedIn extends React.Component {
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
-                <Grid container direction="row" justifyContent="center" className='Grid'>
-                    <Grid item xs={2} >
+                <Grid container>
+                    <Grid item xs={12} md={2}>
                         <div className='sticky'>
                             <Menu userData={this.state.userData} />
                         </div>
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12} md={10}>
                         {this.state.content === "Profile" && <Profile userData={this.state.userData} />}
                         {this.state.content === "Search" && <h1>Search</h1>}
                         {this.state.content === "Home" && <Home userData={this.state.userData} />}

@@ -15,4 +15,7 @@
 }
 .ProfileContainer .Hide {
   display: none;
+}
+.ProfileContainer .Tabs {
+  width: 100%;
 }/*# sourceMappingURL=Profile.css.map */
