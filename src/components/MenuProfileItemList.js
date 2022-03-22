@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 export default function ProfileItemList(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [userData, setUserData] = React.useState(props.userData);
+    const [userData] = React.useState(props.userData);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);

@@ -1,16 +1,10 @@
 import React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import PostScore from './PostScore'
 import PostHeader from './PostHeader';
 import PostMessage from './PostMessage';
-import Divider from '@mui/material/Divider';
-
 
 import '../style/Post.css'
-
 
 const replyData = {
     userID: "@SOS",
