@@ -23,7 +23,7 @@ function TabPanel(props) {
 
 const ProfileTab = (props) => {
 
-    const [profileData, setProfileData] = useState()
+    const [profileData, setProfileData] = useState(props.profileData)
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {

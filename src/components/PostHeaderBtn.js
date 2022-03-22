@@ -11,7 +11,6 @@ class PostHeaderBtn extends React.Component {
             setReplying: props.setReplying,
             setDeleting: props.setDeleting,
             setEditon: props.setEditing,
-            currentUser: props.currentUser
         }
     }
 
@@ -19,13 +18,13 @@ class PostHeaderBtn extends React.Component {
 
         return (
             <Box>
-                <Button size="small" variant="contained" className={`${!this.state.currentUser ? "" : "Hide"}`}>
+                <Button size="small" variant="contained" className={`${!this.props.currentUser ? "" : "Hide"}`}>
                     Reply
                 </Button>
-                <Button size="small" variant="contained" className={`${this.state.currentUser ? "" : "Hide"}`}>
+                <Button size="small" variant="contained" className={`${this.props.currentUser ? "" : "Hide"}`}>
                     Edit
                 </Button>
-                <Button size="small" variant="contained" color="error" className={`${this.state.currentUser ? "" : "Hide"}`}>
+                <Button size="small" variant="contained" color="error" className={`${this.props.currentUser ? "" : "Hide"}`}>
                     Delete
                 </Button>
             </Box>
