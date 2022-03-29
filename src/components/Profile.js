@@ -32,7 +32,7 @@ class Profile extends React.Component {
                             <ProfileHeader profileData={profileData} userData={this.state.userData} />
                         </Grid>
                         <Grid item xs={12} className="Tabs">
-                            <ProfileTab />
+                            <ProfileTab userData={this.state.userData}/>
                         </Grid>
                     </Grid>
 
