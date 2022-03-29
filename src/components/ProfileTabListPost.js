@@ -17,9 +17,9 @@ class ProfileTabListPost extends React.Component {
             // <h1>te</h1>
             <Box>
                 <Post userData={this.props.userData} postData={postData2}/>
-                <Post userData={this.props.userData} postData={postData2}/>
-                <Post userData={this.props.userData} postData={postData2}/>
-                <Post userData={this.props.userData} postData={postData2}/>
+                {/* <Post userData={this.props.userData} postData={postData2}/> */}
+                {/* <Post userData={this.props.userData} postData={postData2}/> */}
+                {/* <Post userData={this.props.userData} postData={postData2}/> */}
             </Box>
         );
     }
