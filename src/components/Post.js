@@ -28,7 +28,7 @@ class Post extends React.Component {
         console.log("isReply : ", this.state.isReply)
         return (
             <Grid container className="MainPostContainer">
-                <Grid item container className='PostContainer'>
+                <Grid item container className='PostContainer' > {/*MAKE THIS REVERSE ROW IF SMALL */}
                     <Grid item xs={2} md={1}>
                         <PostScore score={this.state.postData.score} />
                     </Grid>

@@ -6,7 +6,6 @@ const CommentPostedTime = (timeInMileSec) => {
     let weeks = (timeInMileSec / (1000 * 60 * 60 * 24 * 7)).toFixed(0);
     let months = (timeInMileSec / (1000 * 60 * 60 * 24 * 31)).toFixed(0);
     let years = (timeInMileSec / (1000 * 60 * 60 * 24 * 12)).toFixed(0);
-    console.log("time : ")
   
     if (sec < 60) {
       return "seconds";

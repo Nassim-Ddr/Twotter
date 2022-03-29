@@ -19,7 +19,7 @@ class PostScore extends React.Component {
 
     render() {
         return (
-            <Box className='ScoreContainer'>
+            <Box className='ScoreContainer'> {/* SET THE SCORE TO BE HORIZONTAL IF ON PHONE */}
                 <Box className = 'Score'>
                     <CssBaseline />
                     <IconButton>
