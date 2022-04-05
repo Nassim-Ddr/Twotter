@@ -14,20 +14,7 @@ import MenuProfileItemList from './MenuProfileItemList';
 
 import '../style/Menu.css';
 
-const handleProfile = (event) => {
-    event.preventDefault();
-    console.log("PROFILE");
-};
 
-const handleSearch = (event) => {
-    event.preventDefault();
-    console.log("SEARCH");
-};
-
-const handleHome = (event) => {
-    event.preventDefault();
-    console.log("HOME");
-};
 
 class Menu extends React.Component {
     constructor(props) {
@@ -37,15 +24,30 @@ class Menu extends React.Component {
         }
     }
 
+    handleProfile = (event) => {
+        event.preventDefault();
+        this.props.changeTab("Profile")
+    };
+    
+    handleSearch = (event) => {
+        event.preventDefault();
+        this.props.changeTab("Search")
+    };
+    
+    handleHome = (event) => {
+        event.preventDefault();
+        this.props.changeTab("Home")
+    };
+
     render() {
         return (
             <Box className='Menu'>
                 <nav aria-label="Profile Search Home">
                     <List className='HorizontalList'>
-                        <MenuProfileItemList userData ={this.state.userData}/>
+                        <MenuProfileItemList logout={this.props.logout} userData ={this.state.userData}/>
                         <Divider />
                         <ListItem disablePadding>
-                            <ListItemButton onClick={handleProfile}>
+                            <ListItemButton onClick={this.handleProfile}>
                                 <ListItemIcon>
                                     <PersonIcon />
                                 </ListItemIcon>
@@ -53,7 +55,7 @@ class Menu extends React.Component {
                             </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemButton onClick={handleSearch}>
+                            <ListItemButton onClick={this.handleSearch}>
                                 <ListItemIcon>
                                     <SearchIcon />
                                 </ListItemIcon>
@@ -61,7 +63,7 @@ class Menu extends React.Component {
                             </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemButton onClick={handleHome}>
+                            <ListItemButton onClick={this.handleHome}>
                                 <ListItemIcon>
                                     <HomeIcon />
                                 </ListItemIcon>

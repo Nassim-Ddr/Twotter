@@ -17,6 +17,12 @@ export default function ProfileItemList(props) {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const logout = () => {
+        handleClose()
+        props.logout();
+    }
+
     return (
         <ListItem disablePadding>
             <ListItemButton onClick={handleClick}>
@@ -40,7 +46,7 @@ export default function ProfileItemList(props) {
                 }}
             >
                 <MenuItem onClick={handleClose}>Settings</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={logout}>Logout</MenuItem>
             </Menu>
         </ListItem>
 

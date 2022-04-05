@@ -12,17 +12,23 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
-const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-        email: data.get('email'),
-        password: data.get('password'),
-    });
-};
-
 class Signin extends React.Component {
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        //CHECK ERRORS FOR EMAIL AND PASSWORD HERE
+        console.log({
+            email: data.get('email'),
+            password: data.get('password'),
+        });
+        
+        this.props.goTo("LOGGEDIN")
+    };
+
+    goToSignUP = () => {
+        this.props.goTo("SIGNUP")
+    }
+
     render() {
         return (
             <Container component="main" maxWidth="xs">
@@ -34,7 +40,7 @@ class Signin extends React.Component {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" onSubmit={this.handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"
                             required
@@ -74,7 +80,7 @@ class Signin extends React.Component {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href="#" variant="body2" onClick={this.goToSignUP}>
                                     {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>

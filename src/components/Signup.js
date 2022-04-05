@@ -11,18 +11,24 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
-
-const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-        email: data.get('email'),
-        password: data.get('password'),
-    });
-}
-
 class Singup extends React.Component {
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        // eslint-disable-next-line no-console
+        console.log({
+            email: data.get('email'),
+            password: data.get('password'),
+        });
+
+        this.props.goTo("SIGNIN")
+    }
+
+    goToSignin = () => {
+        this.props.goTo("SIGNIN")
+    }
+
     render() {
         return (
             <Container component="main" maxWidth="xs">
@@ -34,7 +40,7 @@ class Singup extends React.Component {
                     <Typography component="h1" variant="h5">
                         Sign up
                     </Typography>
-                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                    <Box component="form" noValidate onSubmit={this.handleSubmit} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
@@ -96,7 +102,7 @@ class Singup extends React.Component {
                         <Grid container justifyContent="flex-end">
                             <Grid item>
                                 {/* CHANGE THIS LATER FOR SWAPING STATE */}
-                                <Link href="#" variant="body2">
+                                <Link href="#" variant="body2" onClick={this.goToSignin}>
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>

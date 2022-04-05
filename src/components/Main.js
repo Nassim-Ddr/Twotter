@@ -6,6 +6,8 @@ import LoggedIn from './LoggedIn';
 
 import '../style/App.css';
 
+
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -13,29 +15,53 @@ class Main extends React.Component {
       cnx: props.cnx,
       cur: props.cur
     }
+    this.goTo = this.goTo.bind(this)
   }
 
   // CREATE FUNCTIONS : GOTOSIGNIN GOTOSIGNUP GOTOHOME GOTODEFAULT
 
+  goTo(destination) {
+    if (destination === "SIGNIN") {
+      this.setState({
+        cnx: "FALSE", 
+        cur: "SIGNIN"
+      })
+    } else if (destination === "SIGNUP") {
+      this.setState({
+        cnx: "FALSE", 
+        cur: "SIGNUP"
+      })
+    } else if (destination === "LOGGEDIN") {
+      this.setState({
+        cnx: "TRUE"
+      })
+    } else {
+      this.setState({
+        cnx: "FALSE", 
+        cur: "DEFAULT"
+      })
+    }
+  }
+
   render() {
     if (this.state.cnx === "TRUE") {
       return (
-        <LoggedIn content="Profile"/>
+        <LoggedIn goTo={this.goTo} content="Profile"/>
       );
     }
     else if (this.state.cur === "SIGNIN") {
       return (
-        <Signin />
+        <Signin goTo={this.goTo}/>
       );
     }
     else if (this.state.cur === "SIGNUP") {
       return (
-        <Signup />
+        <Signup goTo={this.goTo}/>
       );
     }
     else {
       return (
-        <Default />
+        <Default goTo={this.goTo}/>
       );
     }
   }

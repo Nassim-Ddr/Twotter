@@ -3,7 +3,7 @@
   gap: 1rem;
 }
 .MainPostContainer .PostContainer {
-  background-color: white;
+  background-color: hsl(0deg, 0%, 100%);
   padding: 1rem;
   border-radius: 10px;
   align-items: center;
@@ -17,10 +17,10 @@
 .MainPostContainer .PostContainer .ScoreContainer .Score {
   width: 75%;
   border-radius: 20px;
-  background-color: #f5f6fa;
+  background-color: hsl(228deg, 33%, 97%);
   display: block;
   font-weight: 700;
-  color: #5457b6;
+  color: hsl(238deg, 40%, 52%);
 }
 @media (max-width: 900px) {
   .MainPostContainer .PostContainer .ScoreContainer .Score {
@@ -57,12 +57,12 @@
   }
 }
 .MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .UserName {
-  color: #324152;
+  color: hsl(212deg, 24%, 26%);
   font-weight: 500;
 }
 .MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .PostTime {
   margin-left: 15px;
-  color: #67727e;
+  color: hsl(211deg, 10%, 45%);
 }
 .MainPostContainer .PostContainer .ContentContainer .PostHeaderContainer .BtnContainer {
   margin-left: auto;
