@@ -19,6 +19,8 @@ const postData2 = {
     score: 8222
 }
 
+const msgList = [postData, postData2, postData, postData2, postData]
+
 class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -27,22 +29,16 @@ class Home extends React.Component {
         }
     }
     render() {
+
         return (
             //Post field + button
             //Messages
             <Box sx={{ flexGrow: 1 }}  className='mainContent'>
                 <CssBaseline />
-                <Post userData={this.state.userData} postData={postData}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                <Post userData={this.state.userData} postData={postData2}/>
-                
+
+                {msgList.map(msg => {
+                    return  <Post userData={this.state.userData} postData={msg}/>
+                })}
             </Box>
         );
     }

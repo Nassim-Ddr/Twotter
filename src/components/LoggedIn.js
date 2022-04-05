@@ -34,8 +34,6 @@ class LoggedIn extends React.Component {
     }
 
     render() {
-
-
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
