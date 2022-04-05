@@ -46,7 +46,7 @@ class Main extends React.Component {
   render() {
     if (this.state.cnx === "TRUE") {
       return (
-        <LoggedIn goTo={this.goTo} content="Profile"/>
+        <LoggedIn goTo={this.goTo} content="Home"/>
       );
     }
     else if (this.state.cur === "SIGNIN") {

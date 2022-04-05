@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 
 const postData = {
+    id: 1,
     userID: "@AA_Nassim",
     userName: "Nassim AHMED ALI",
     postTime: new Date(2022, 3, 4, 12, 32, 2),
@@ -12,6 +13,7 @@ const postData = {
 }
 
 const postData2 = {
+    id: 2, 
     userID: "@AA_Reda",
     userName: "Reda AHMED ALI",
     postTime: new Date(2022, 5, 24, 15, 2, 3),
@@ -19,7 +21,7 @@ const postData2 = {
     score: 8222
 }
 
-const msgList = [postData, postData2, postData, postData2, postData]
+const msgList = [postData, postData2]
 
 class Home extends React.Component {
     constructor(props) {
@@ -37,8 +39,9 @@ class Home extends React.Component {
                 <CssBaseline />
 
                 {msgList.map(msg => {
-                    return  <Post userData={this.state.userData} postData={msg}/>
+                    return  <Post key={msg.id} userData={this.state.userData} postData={msg}/>
                 })}
+
             </Box>
         );
     }
