@@ -20,6 +20,7 @@ class Singup extends React.Component {
         console.log({
             email: data.get('email'),
             password: data.get('password'),
+            name: data.get('firstName')
         });
 
         this.props.goTo("SIGNIN")
