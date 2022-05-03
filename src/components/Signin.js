@@ -12,21 +12,44 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
+import axios from 'axios';
+
 class Signin extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        //CHECK ERRORS FOR EMAIL AND PASSWORD HERE
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
+
+        this.checkUser(data.get('email'), data.get('password') ).then(response => {
+            this.props.setUserData(response.data)
+            this.props.goTo("LOGGEDIN")
+        }).catch(e => {
+            console.log("LOGIN/PWD INCORRECTE")
+        })
+
         
-        this.props.goTo("LOGGEDIN")
     };
 
     goToSignUP = () => {
         this.props.goTo("SIGNUP")
+    }
+
+    checkUser = async (login, pwd) => {
+        var str = 'http://localhost:4000/api/user/login'
+        let res = await axios.post(str, {login: login, password: pwd}, { withCredentials: true });
+        return new Promise((resolve, reject) => {
+            if (res.status === 200) resolve(res)
+            else reject(res)
+        })
+    }
+
+    getUserData = async (login) => {
+        var str = 'http://localhost:4000/api/user/'
+        str = str.concat(login)
+        let res = await axios.get(str, { withCredentials: true })
+        return new Promise((resolve, reject) => {
+            if (res.status === 200) resolve(res)
+            else reject(res)
+        })
     }
 
     render() {

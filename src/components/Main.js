@@ -13,7 +13,8 @@ class Main extends React.Component {
     super(props);
     this.state = {
       cnx: props.cnx,
-      cur: props.cur
+      cur: props.cur,
+      userData: null
     }
     this.goTo = this.goTo.bind(this)
   }
@@ -23,12 +24,12 @@ class Main extends React.Component {
   goTo(destination) {
     if (destination === "SIGNIN") {
       this.setState({
-        cnx: "FALSE", 
+        cnx: "FALSE",
         cur: "SIGNIN"
       })
     } else if (destination === "SIGNUP") {
       this.setState({
-        cnx: "FALSE", 
+        cnx: "FALSE",
         cur: "SIGNUP"
       })
     } else if (destination === "LOGGEDIN") {
@@ -37,31 +38,38 @@ class Main extends React.Component {
       })
     } else {
       this.setState({
-        cnx: "FALSE", 
+        cnx: "FALSE",
         cur: "DEFAULT"
       })
     }
   }
 
+  setUserData = (obj) => {
+    this.setState({
+      userData: obj
+    })
+  }
+
+
   render() {
     if (this.state.cnx === "TRUE") {
       return (
-        <LoggedIn goTo={this.goTo} content="Home"/>
+        <LoggedIn goTo={this.goTo} userData={this.state.userData} content="Profile" />
       );
     }
     else if (this.state.cur === "SIGNIN") {
       return (
-        <Signin goTo={this.goTo}/>
+        <Signin goTo={this.goTo}  setUserData={this.setUserData}/>
       );
     }
     else if (this.state.cur === "SIGNUP") {
       return (
-        <Signup goTo={this.goTo}/>
+        <Signup goTo={this.goTo} />
       );
     }
     else {
       return (
-        <Default goTo={this.goTo}/>
+        <Default goTo={this.goTo} />
       );
     }
   }

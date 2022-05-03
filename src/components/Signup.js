@@ -11,23 +11,39 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
+
+import axios from 'axios';
+
 class Singup extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
-        console.log({
-            email: data.get('email'),
+
+        const newUser = {
+            login: data.get('email'),
             password: data.get('password'),
-            name: data.get('firstName')
-        });
+            username: data.get('username'), 
+            userid: data.get('userid'), 
+        }
+        console.log(newUser)
+
+        this.createAccount(newUser).then(response => {
+            console.log(response)
+        }).catch(e => {
+            console.log(e)
+        })
 
         this.props.goTo("SIGNIN")
     }
 
     goToSignin = () => {
         this.props.goTo("SIGNIN")
+    }
+
+    createAccount = async (newUser) => {
+        let res = await axios.put('http://localhost:4000/api/user', newUser, { withCredentials: true });
+        // console.log(res)
     }
 
     render() {
@@ -46,11 +62,11 @@ class Singup extends React.Component {
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     autoComplete="given-name"
-                                    name="firstName"
+                                    name="username"
                                     required
                                     fullWidth
-                                    id="firstName"
-                                    label="First Name"
+                                    id="username"
+                                    label="Username"
                                     autoFocus
                                 />
                             </Grid>
@@ -58,10 +74,10 @@ class Singup extends React.Component {
                                 <TextField
                                     required
                                     fullWidth
-                                    id="lastName"
-                                    label="Last Name"
-                                    name="lastName"
-                                    autoComplete="family-name"
+                                    id="userid"
+                                    label="User ID"
+                                    name="userid"
+                                    autoComplete="userid"
                                 />
                             </Grid>
                             <Grid item xs={12}>

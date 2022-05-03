@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
 
 import '../style/PostForm.css';
+import axios from "axios";
+import { internal_resolveProps } from "@mui/utils";
 
 class HomePostForm extends React.Component {
 
@@ -14,15 +16,29 @@ class HomePostForm extends React.Component {
         const data = new FormData(event.currentTarget)
 
         const newPost = {
-            id: 3,
             userID: this.props.userData.id,
             userName: this.props.userData.name,
-            postTime: Date.now(),
             content: data.get('text'),
+            postTime: Date.now(),
+            upvotes: [], 
+            downvotes: [],
             score: 0
         }
+        
+        this.addPostDB(newPost).then(response => {
+            console.log(response)
+            newPost._id = response.data.id
+            // console.log(newPost)
+            this.props.addPost(newPost)
+        }).catch(e => {
+            console.log(e)
+        })
+    }
 
-        this.props.addPost(newPost)
+    addPostDB = async (post) => {
+        const str = "http://localhost:4000/api/post/"
+        let res = await axios.put(str, post, { withCredentials: true })
+        return res
     }
 
     render() {

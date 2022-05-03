@@ -1,6 +1,16 @@
 import { Box, Tabs, Tab, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import ProfileTabListPost from './ProfileTabListPost';
+import ProfileTabListFollower from './ProfileTabListFollower';
+
+
+const followers = {
+
+}
+
+const followed = {
+
+}
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -14,7 +24,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box className="booga">
+        <Box>
           {children}
         </Box>
       )}
@@ -24,29 +34,40 @@ function TabPanel(props) {
 
 const ProfileTab = (props) => {
 
-  const [profileData, setProfileData] = useState(props.profileData)
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const loadFollowers = () => {
+
+  }
+
+  const loadFollowed = () => {
+
+  }
+
+  //load followers
+
+
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderTop: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
+          <Tab label="Posts" />
+          <Tab label="Following" />
+          <Tab label="Followers" />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <ProfileTabListPost userData={props.userData}/>
+        <ProfileTabListPost userData={props.userData} profileData={props.profileData}/> 
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <ProfileTabListFollower peopleList={followed}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+      <ProfileTabListFollower peopleList={followers}/>
       </TabPanel>
     </Box>
   );

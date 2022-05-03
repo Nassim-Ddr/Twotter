@@ -10,28 +10,25 @@ const profileData = {
     name: "AHMED ALI Nassim",
     ppic: "none",
     bio: "Dolor ex quis deserunt id ad id cillum sit eiusmod adipisicing laboris. Adipisicing fugiat proident adipisicing tempor magna culpa eu in reprehenderit aute occaecat nulla labore. Et occaecat officia laborum officia do eu adipisicing labore proident. Et ad magna velit aliqua adipisicing deserunt. Irure veniam fugiat reprehenderit dolore fugiat Lorem sit. Anim elit dolor eiusmod laborum ullamco Lorem tempor laborum sint excepteur. Nulla nostrud labore non aute esse commodo enim ad culpa reprehenderit consectetur veniam et do.",
-
 }
 class Profile extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            userData: props.userData,
-            profileData: props.profileData,
-        }
+    loadProfileData = () => {
+        
     }
 
     render() {
+
+        //Load profileData and save it in var
         return (
             <Box className='mainContent' sx={{ overflow: 'hidden' }}>
                 <CssBaseline />
                 <Grid item container>
                     <Grid item container className='ProfileContainer' direction={"column"} xs={12}>
-                        <ProfileHeader profileData={profileData} userData={this.state.userData} />
+                        <ProfileHeader profileData={this.props.profileData} userData={this.props.userData} />
                     </Grid>
                     <Grid item xs={12} className="Tabs">
-                        <ProfileTab userData={this.state.userData} />
+                        <ProfileTab profileData={this.props.profileData} userData={this.props.userData} />
                     </Grid>
 
                 </Grid>

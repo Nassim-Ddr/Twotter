@@ -10,24 +10,20 @@ function kFormatter(num) {
 }
 
 class PostScore extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            score: props.score
-        }
-    }
 
     render() {
         return (
-            <Box className='ScoreContainer'> {/* SET THE SCORE TO BE HORIZONTAL IF ON PHONE */}
+            <Box className='ScoreContainer'> 
                 <Box className = 'Score'>
                     <CssBaseline />
-                    <IconButton>
-                        <ArrowUpwardSharp />
+                    <IconButton onClick={this.props.upvote}>
+                        {this.props.ud === 1 && <ArrowUpwardSharp color='primary' />}
+                        {this.props.ud !== 1 && <ArrowUpwardSharp />}
                     </IconButton>
-                    {kFormatter(this.state.score)}
-                    <IconButton>
-                        <ArrowDownwardSharp />
+                    {kFormatter(this.props.score)}
+                    <IconButton onClick={this.props.downvote}>
+                        {this.props.ud === 2 && <ArrowDownwardSharp color='primary' />}
+                        {this.props.ud !== 2  && <ArrowDownwardSharp />}
                     </IconButton>
                 </Box>
             </Box>

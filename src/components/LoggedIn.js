@@ -17,9 +17,14 @@ class LoggedIn extends React.Component {
 
     constructor(props) {
         super(props);
+        const tmp = {
+            id:  props.userData.userid,
+            name: props.userData.username, 
+            ppic:"URL TO PIC"
+        }
         this.state = {
             content: props.content,
-            userData: userData
+            userData: tmp
         }
     }
 
@@ -53,7 +58,8 @@ class LoggedIn extends React.Component {
                         <div className={(this.state.content === "Home") ? "" : "Hide"}>
                             <Home userData={this.state.userData} />
                         </div> */}
-                        {this.state.content === "Profile" && <Profile userData={this.state.userData} />}
+                        {this.state.content === "OtherProfile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} />}
+                        {this.state.content === "Profile" && <Profile userData={this.state.userData} profileData={this.state.userData}/>}
                         {this.state.content === "Search" && <h1>Search</h1>}
                         {this.state.content === "Home" && <Home userData={this.state.userData} />}
                     </Grid>
