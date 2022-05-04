@@ -140,7 +140,7 @@ class Post extends React.Component {
                     </Grid>
                     <Grid container direction='column' item xs={10} md={11} className="ContentContainer">
                         <Grid item>
-                            <PostHeader userData={this.state.userData} postData={this.state.postData} />
+                            <PostHeader userData={this.state.userData} postData={this.state.postData}  goToProfile={this.props.goToProfile}/>
                         </Grid>
                         <Grid item>
                             <PostMessage postData={this.state.postData} />

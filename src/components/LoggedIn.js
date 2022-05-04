@@ -6,12 +6,7 @@ import Menu from './Menu';
 import Home from './Home';
 import Profile from './Profile'
 
-
-const userData = {
-    id: "@AA_Nassim",
-    name: "AHMED ALI Nassim",
-    ppic: "URL TO PIC"
-}
+import axios from 'axios';
 
 class LoggedIn extends React.Component {
 
@@ -24,7 +19,8 @@ class LoggedIn extends React.Component {
         }
         this.state = {
             content: props.content,
-            userData: tmp
+            userData: tmp, 
+            otherUserData: {}
         }
     }
 
@@ -35,6 +31,24 @@ class LoggedIn extends React.Component {
     changeTab = (tab) => {
         this.setState({
             content: tab
+        })
+    }
+
+    goToProfile = async (userid) => {
+
+        let str = "http://localhost:4000/api/user/"
+        str = str.concat(userid)
+
+        let res = await axios.get(str, { withCredentials: true })
+        const tmp = {
+            id:  res.data.userid,
+            name: res.data.username, 
+            ppic:"URL TO PIC"
+        }
+
+        this.setState({
+            content: "OtherProfile", 
+            otherUserData: tmp
         })
     }
 
@@ -49,19 +63,10 @@ class LoggedIn extends React.Component {
                         </div>
                     </Grid>
                     <Grid item xs={12} md={10}>
-                        {/* <div className={(this.state.content === "Profile") ? "" : "Hide"}>
-                            <Profile userData={this.state.userData} />
-                        </div>
-                        <div className={(this.state.content === "Search") ? "" : "Hide"}>
-                            <h1>Search</h1>
-                        </div>
-                        <div className={(this.state.content === "Home") ? "" : "Hide"}>
-                            <Home userData={this.state.userData} />
-                        </div> */}
-                        {this.state.content === "OtherProfile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} />}
-                        {this.state.content === "Profile" && <Profile userData={this.state.userData} profileData={this.state.userData}/>}
+                        {this.state.content === "OtherProfile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} goToProfile={this.goToProfile}/>}
+                        {this.state.content === "Profile" && <Profile userData={this.state.userData} profileData={this.state.userData} goToProfile={this.goToProfile}/>}
                         {this.state.content === "Search" && <h1>Search</h1>}
-                        {this.state.content === "Home" && <Home userData={this.state.userData} />}
+                        {this.state.content === "Home" && <Home userData={this.state.userData} goToProfile={this.goToProfile}/>}
                     </Grid>
                 </Grid>
             </Box>);

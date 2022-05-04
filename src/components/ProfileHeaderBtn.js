@@ -18,10 +18,10 @@ class ProfileHeaderBtn extends React.Component {
 
         return (
             <Box>
-                <Button size="small" variant="contained" className={`${this.state.currentUser ? "" : "Hide"}`}>
+                <Button size="small" variant="contained" className={`${!this.props.currentUser ? "" : "Hide"}`}>
                     Follow
                 </Button>
-                <Button size="small" variant="contained" className={`${!this.state.currentUser ? "" : "Hide"}`}>
+                <Button size="small" variant="contained" className={`${this.props.currentUser ? "" : "Hide"}`}>
                     Edit Profile
                 </Button>
             </Box>

@@ -5,7 +5,6 @@ import { Button } from "@mui/material";
 
 import '../style/PostForm.css';
 import axios from "axios";
-import { internal_resolveProps } from "@mui/utils";
 
 class HomePostForm extends React.Component {
 
@@ -14,7 +13,7 @@ class HomePostForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         const data = new FormData(event.currentTarget)
-
+        
         const newPost = {
             userID: this.props.userData.id,
             userName: this.props.userData.name,
@@ -25,6 +24,8 @@ class HomePostForm extends React.Component {
             score: 0
         }
         
+        document.getElementById('text').value = ""
+
         this.addPostDB(newPost).then(response => {
             console.log(response)
             newPost._id = response.data.id
@@ -45,8 +46,8 @@ class HomePostForm extends React.Component {
         return (
             <Box component="form" noValidate onSubmit={this.handleSubmit} className="PostFormContainer">
                 <div className="PostFormHeaderContainer">
-                    <div className="PostFormHeader">
-                        <Avatar alt="AHMED ALI NASSIM" src="1.jpg" />
+                    <div className={this.props.userData.name}>
+                        <Avatar alt={this.props.userData.name} src="1.jpg" />
                         <div className='UserName'>{this.props.userData.name}</div>
                     </div>
                     <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}> Post </Button>

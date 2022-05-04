@@ -40,16 +40,8 @@ const ProfileTab = (props) => {
     setValue(newValue);
   };
 
-  const loadFollowers = () => {
-
-  }
-
-  const loadFollowed = () => {
-
-  }
-
-  //load followers
-
+  console.log(props.followers)
+  console.log(props.followed)
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -61,13 +53,13 @@ const ProfileTab = (props) => {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <ProfileTabListPost userData={props.userData} profileData={props.profileData}/> 
+        <ProfileTabListPost userData={props.userData} profileData={props.profileData} goToProfile={this.props.goToProfile}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ProfileTabListFollower peopleList={followed}/>
+        <ProfileTabListFollower peopleList={props.followed} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <ProfileTabListFollower peopleList={followers}/>
+        <ProfileTabListFollower peopleList={props.followers} />
       </TabPanel>
     </Box>
   );

@@ -14,8 +14,12 @@ class Home extends React.Component {
             userData: props.userData,
             msgList: []
         }
-        this.returnMsgList(props.userData.id)
+        
 
+    }
+
+    componentDidMount() {
+        this.returnMsgList(this.props.userData.id)
     }
 
     setMsgList = (newMsgList) => {
@@ -59,7 +63,7 @@ class Home extends React.Component {
                 <HomePostForm addPost={this.addPost} userData={this.state.userData} />
 
                 {this.state.msgList.map(msg => {
-                    return <Post key={msg._id} userData={this.state.userData} postData={msg} />
+                    return <Post key={msg._id} userData={this.state.userData} postData={msg}  goToProfile={this.props.goToProfile}/>
                 })}
             </Box>
         );
