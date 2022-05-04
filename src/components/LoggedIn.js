@@ -35,6 +35,11 @@ class LoggedIn extends React.Component {
     }
 
     goToProfile = async (userid) => {
+        if (userid === this.state.userData.id) {
+            
+            this.changeTab("Profile")
+            return
+        }
 
         let str = "http://localhost:4000/api/user/"
         str = str.concat(userid)

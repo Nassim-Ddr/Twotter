@@ -4,22 +4,17 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 
 class ProfileTabListFollower extends React.Component {
-
-    handleClick = (event) => {
-        this.props.goToProfile(this.props.postData.userID)
-    };
-
     render() {
         return (
             <Box className="TabContainer">
-                {this.props.peopleList.map(msg => {
+                {this.props.peopleList.map(user => {
                     return (
-                        <Box>
-                            <ListItemButton onClick={this.handleClick}>
+                        <Box key={user.userid}>
+                            <ListItemButton key={user.userid} onClick={()=> {this.props.goToProfile(user.userid)}}>
                                 <ListItemAvatar>
-                                    <Avatar alt={this.props.postData.userName} src={this.props.postData.ppic} />
+                                    <Avatar alt={user.username} src={user.ppic} />
                                 </ListItemAvatar>
-                                <ListItemText primary={this.props.postData.userName} secondary={this.props.postData.userID} />
+                                <ListItemText primary={user.username} secondary={user.userid} />
                             </ListItemButton>
                         </Box>
                     )
