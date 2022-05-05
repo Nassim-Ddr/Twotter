@@ -54,7 +54,7 @@ class Main extends React.Component {
   render() {
     if (this.state.cnx === "TRUE") {
       return (
-        <LoggedIn goTo={this.goTo} userData={this.state.userData} content="Profile" />
+        <LoggedIn goTo={this.goTo} userData={this.state.userData} content="Home" />
       );
     }
     else if (this.state.cur === "SIGNIN") {

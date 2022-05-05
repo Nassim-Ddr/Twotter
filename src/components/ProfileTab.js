@@ -47,10 +47,10 @@ const ProfileTab = (props) => {
         <ProfileTabListPost userData={props.userData} profileData={props.profileData} goToProfile={props.goToProfile}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ProfileTabListFollower peopleList={props.followed} goToProfile={props.goToProfile}/>
+        <ProfileTabListFollower peopleList={props.profileData.followed} goToProfile={props.goToProfile}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <ProfileTabListFollower peopleList={props.followers} goToProfile={props.goToProfile}/>
+        <ProfileTabListFollower peopleList={props.profileData.followers} goToProfile={props.goToProfile}/>
       </TabPanel>
     </Box>
   );

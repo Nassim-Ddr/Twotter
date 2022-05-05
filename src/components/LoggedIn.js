@@ -35,29 +35,7 @@ class LoggedIn extends React.Component {
         })
     }
 
-    loadProfileData = async () => {
-        console.log("I AM CALLED")
-
-        let str = 'http://localhost:4000/api/follow/fws/'
-        str = str.concat(this.state.otherUserData.id)
-        let res1 = await axios.get(str, { withCredentials: true })
-
-        str = 'http://localhost:4000/api/follow/fwd/'
-        str = str.concat(this.state.otherUserData.id)
-        let res2 = await axios.get(str, { withCredentials: true })
-        
-        this.setState({
-            followers: res1.data, 
-            followed: res2.data
-        })
-    }
-
     goToProfile = async (userid) => {
-        if (userid === this.state.userData.id) {
-            this.changeTab("Profile")
-            return
-        }
-
         let str = "http://localhost:4000/api/user/"
         str = str.concat(userid)
 
@@ -68,12 +46,46 @@ class LoggedIn extends React.Component {
             ppic:"URL TO PIC"
         }
 
+        str = 'http://localhost:4000/api/follow/fws/'
+        str = str.concat(tmp.id)
+        let res1 = await axios.get(str, { withCredentials: true })
+
+        str = 'http://localhost:4000/api/follow/fwd/'
+        str = str.concat(tmp.id)
+        let res2 = await axios.get(str, { withCredentials: true })
+
+        str = 'http://localhost:4000/api/post/'
+        str = str.concat(userid)
+        const res3 = await axios.get(str, { withCredentials: true })
+
+        tmp.followers = res1.data
+        tmp.followed = res2.data
+        tmp.posts = res3.data.sort((a, b) => (a.postTime<b.postTime)?1: -1)
+
+        console.log(tmp)
         this.setState({
-            content: "OtherProfile", 
+            content: "Profile", 
             otherUserData: tmp
         })
+        // this.setState({})
+    }
 
-        this.loadProfileData()
+
+    addToFollowers = (userToAdd) => {
+        let res = this.state.otherUserData
+        res.followers.push(userToAdd)
+        this.setState({
+            followers: res
+        })
+    } 
+
+    remFromFollowers = (userToDel) => {
+        let res = this.state.otherUserData
+        const index = res.followers.map(o => o.userid).indexOf(userToDel)
+        res.followers.splice(index, 1)
+        this.setState({
+            followers: res
+        })
     }
 
     render() {
@@ -83,12 +95,12 @@ class LoggedIn extends React.Component {
                 <Grid container>
                     <Grid item xs={12} md={2}>
                         <div className='sticky'>
-                            <Menu changeTab={this.changeTab} logout={this.logout} userData={this.state.userData} />
+                            <Menu changeTab={this.changeTab} logout={this.logout} userData={this.state.userData} goToProfile={this.goToProfile}/>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={10}>
-                        {this.state.content === "OtherProfile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} goToProfile={this.goToProfile}/>}
-                        {this.state.content === "Profile" && <Profile userData={this.state.userData} profileData={this.state.userData} goToProfile={this.goToProfile}/>}
+                        {/* {this.state.content === "OtherProfile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} goToProfile={this.goToProfile}/>} */}
+                        {this.state.content === "Profile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} goToProfile={this.goToProfile} remfollow={this.remFromFollowers} addfollow={this.addToFollowers}/>}
                         {this.state.content === "Search" && <Search userData={this.state.userData} goToProfile={this.goToProfile}/>}
                         {this.state.content === "Home" && <Home userData={this.state.userData} goToProfile={this.goToProfile}/>}
                     </Grid>

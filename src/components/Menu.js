@@ -26,7 +26,8 @@ class Menu extends React.Component {
 
     handleProfile = (event) => {
         event.preventDefault();
-        this.props.changeTab("Profile")
+        this.props.goToProfile(this.props.userData.id)
+        
     };
     
     handleSearch = (event) => {
