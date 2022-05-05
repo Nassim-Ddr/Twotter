@@ -35,9 +35,25 @@ class LoggedIn extends React.Component {
         })
     }
 
+    loadProfileData = async () => {
+        console.log("I AM CALLED")
+
+        let str = 'http://localhost:4000/api/follow/fws/'
+        str = str.concat(this.state.otherUserData.id)
+        let res1 = await axios.get(str, { withCredentials: true })
+
+        str = 'http://localhost:4000/api/follow/fwd/'
+        str = str.concat(this.state.otherUserData.id)
+        let res2 = await axios.get(str, { withCredentials: true })
+        
+        this.setState({
+            followers: res1.data, 
+            followed: res2.data
+        })
+    }
+
     goToProfile = async (userid) => {
         if (userid === this.state.userData.id) {
-            
             this.changeTab("Profile")
             return
         }
@@ -56,6 +72,8 @@ class LoggedIn extends React.Component {
             content: "OtherProfile", 
             otherUserData: tmp
         })
+
+        this.loadProfileData()
     }
 
     render() {

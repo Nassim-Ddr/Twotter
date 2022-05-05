@@ -23,6 +23,8 @@ class Profile extends React.Component {
     }
 
     loadProfileData = async () => {
+        console.log("I AM CALLED")
+
         let str = 'http://localhost:4000/api/follow/fws/'
         str = str.concat(this.props.profileData.id)
         let res1 = await axios.get(str, { withCredentials: true })
@@ -59,7 +61,8 @@ class Profile extends React.Component {
         // console.log(this.props.profileData)
         // console.log(this.state.followed)
         // console.log(this.state.followers)
-        console.log(this.props.userData)
+        // this.loadProfileData()
+        // console.log(this.props.userData)
         let b = 0
         if (this.state.followers.some(f => f.userid === this.props.userData.id)) {
             b = 1
@@ -70,7 +73,7 @@ class Profile extends React.Component {
                 <CssBaseline />
                 <Grid item container>
                     <Grid item container className='ProfileContainer' direction={"column"} xs={12}>
-                        <ProfileHeader profileData={this.props.profileData} userData={this.props.userData} following={b} remfollow={this.remFromFollowers} addfollow={this.addToFollowers}/>
+                        <ProfileHeader profileData={this.props.profileData} userData={this.props.userData} following={b} remfollow={this.remFromFollowers} addfollow={this.addToFollowers} loadProfileData={this.loadProfileData}/>
                     </Grid>
                     <Grid item xs={12} className="Tabs">
                         <ProfileTab profileData={this.props.profileData} userData={this.props.userData} followers={this.state.followers} followed={this.state.followed} goToProfile={this.props.goToProfile}/>

@@ -3,15 +3,6 @@ import React, { useState } from 'react';
 import ProfileTabListPost from './ProfileTabListPost';
 import ProfileTabListFollower from './ProfileTabListFollower';
 
-
-const followers = {
-
-}
-
-const followed = {
-
-}
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
