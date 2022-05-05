@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Menu from './Menu';
 import Home from './Home';
 import Profile from './Profile'
+import Search from './Search';
 
 import axios from 'axios';
 
@@ -70,7 +71,7 @@ class LoggedIn extends React.Component {
                     <Grid item xs={12} md={10}>
                         {this.state.content === "OtherProfile" && <Profile userData={this.state.userData} profileData={this.state.otherUserData} goToProfile={this.goToProfile}/>}
                         {this.state.content === "Profile" && <Profile userData={this.state.userData} profileData={this.state.userData} goToProfile={this.goToProfile}/>}
-                        {this.state.content === "Search" && <h1>Search</h1>}
+                        {this.state.content === "Search" && <Search userData={this.state.userData} goToProfile={this.goToProfile}/>}
                         {this.state.content === "Home" && <Home userData={this.state.userData} goToProfile={this.goToProfile}/>}
                     </Grid>
                 </Grid>

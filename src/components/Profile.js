@@ -12,7 +12,7 @@ class Profile extends React.Component {
         super(props)
 
         this.state = {
-            follwoers: [], 
+            followers: [], 
             followed: [], 
             info: {}
         }
@@ -37,18 +37,40 @@ class Profile extends React.Component {
         })
     }
 
+    addToFollowers = (userToAdd) => {
+        let res = this.state.followers
+        res.push(userToAdd)
+        this.setState({
+            followers: res
+        })
+    } 
+
+    remFromFollowers = (userToDel) => {
+        let res = this.state.followers
+        const index = res.map(o => o.userid).indexOf(userToDel)
+        res.splice(index, 1)
+        this.setState({
+            followers: res
+        })
+    }
+
     render() {
 
         // console.log(this.props.profileData)
         // console.log(this.state.followed)
         // console.log(this.state.followers)
-
+        console.log(this.props.userData)
+        let b = 0
+        if (this.state.followers.some(f => f.userid === this.props.userData.id)) {
+            b = 1
+        }
+        // console.log(b)
         return (
             <Box className='mainContent' sx={{ overflow: 'hidden' }}>
                 <CssBaseline />
                 <Grid item container>
                     <Grid item container className='ProfileContainer' direction={"column"} xs={12}>
-                        <ProfileHeader profileData={this.props.profileData} userData={this.props.userData} />
+                        <ProfileHeader profileData={this.props.profileData} userData={this.props.userData} following={b} remfollow={this.remFromFollowers} addfollow={this.addToFollowers}/>
                     </Grid>
                     <Grid item xs={12} className="Tabs">
                         <ProfileTab profileData={this.props.profileData} userData={this.props.userData} followers={this.state.followers} followed={this.state.followed} goToProfile={this.props.goToProfile}/>

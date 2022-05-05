@@ -1,5 +1,5 @@
 import { Box, Grid, Avatar, ListItemText } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import ProfileHeaderBtn from './ProfileHeaderBtn';
 
 const ProfileHeader = (props) => {
@@ -15,7 +15,7 @@ const ProfileHeader = (props) => {
                 <Grid item xs={12} md={11}>
                     <Box className='Info'>
                         <ListItemText primary={props.profileData.name} secondary={props.profileData.id} />
-                        <ProfileHeaderBtn currentUser={props.userData.id === props.profileData.id ? "TRUE" : ""} />
+                        <ProfileHeaderBtn currentUser={props.userData.id === props.profileData.id ? "TRUE" : ""} following={props.following} profileData={props.profileData} userData={props.userData} remfollow={props.remfollow} addfollow={props.addfollow}/>
                     </Box>
                 </Grid>
             </Grid>
