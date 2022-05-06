@@ -119,8 +119,7 @@ class Post extends React.Component {
         //Type is /up/ or /dw/ (upvote and downvote)
         let str = 'http://localhost:4000/api/post'
         str = str.concat(type)
-        let res = await axios.post(str, {userid:userid, postid:postid, action:action}, { withCredentials: true })
-        //console.log(res)
+        await axios.post(str, {userid:userid, postid:postid, action:action}, { withCredentials: true })
     }
     
     render() {

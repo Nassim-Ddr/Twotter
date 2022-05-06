@@ -70,7 +70,7 @@ class Signin extends React.Component {
         const data = new FormData(event.currentTarget);
 
         this.checkUser(data.get('email'), data.get('password')).then(response => {
-            console.log(response)
+            // console.log(response)
             this.props.setUserData(response.data)
             this.props.goTo("LOGGEDIN")
         }).catch(e => {

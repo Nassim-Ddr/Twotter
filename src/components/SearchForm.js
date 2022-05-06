@@ -28,7 +28,7 @@ class SearchForm extends React.Component {
 
         const str = 'http://localhost:4000/api/post/search/'
         const res = await axios.post(str, m, {withCredentials: true})
-        console.log(res.data)
+        // console.log(res.data)
         this.props.setMsgList(res.data)
     }
 

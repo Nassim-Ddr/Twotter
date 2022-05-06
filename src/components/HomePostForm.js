@@ -27,9 +27,8 @@ class HomePostForm extends React.Component {
         document.getElementById('text').value = ""
 
         this.addPostDB(newPost).then(response => {
-            console.log(response)
+            // console.log(response)
             newPost._id = response.data.id
-            // console.log(newPost)
             this.props.addPost(newPost)
         }).catch(e => {
             console.log(e)

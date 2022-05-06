@@ -106,7 +106,7 @@ class Singup extends React.Component {
         // console.log(newUser)
 
         this.createAccount(newUser).then(response => {
-            console.log(response)
+            // console.log(response)
             this.props.goTo("SIGNIN")
         }).catch(e => {
             if (e.response.status === 430) {
@@ -137,7 +137,7 @@ class Singup extends React.Component {
     }
 
     createAccount = async (newUser) => {
-        let res = await axios.put('http://localhost:4000/api/user', newUser, { withCredentials: true });
+        await axios.put('http://localhost:4000/api/user', newUser, { withCredentials: true });
         // console.log(res)
     }
 

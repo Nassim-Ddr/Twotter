@@ -1,5 +1,5 @@
-import { Box, Tabs, Tab, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { Box, Tabs, Tab } from '@mui/material';
+import React from 'react';
 import ProfileTabListPost from './ProfileTabListPost';
 import ProfileTabListFollower from './ProfileTabListFollower';
 

@@ -25,8 +25,14 @@ class LoggedIn extends React.Component {
         }
     }
 
-    logout = () => {
-        this.props.goTo("SIGNIN")
+    logout = async () => {
+        let str = "http://localhost:4000/api/user/logout"
+        axios.post(str, {userid: this.state.userData.id}, { withCredentials: true }).then(response => {
+            this.props.goTo("SIGNIN")
+        }).catch(e => {
+            console.log("Erreur de deconnection", e)
+        })
+        
     }
 
     changeTab = (tab) => {
@@ -62,7 +68,7 @@ class LoggedIn extends React.Component {
         tmp.followed = res2.data
         tmp.posts = res3.data.sort((a, b) => (a.postTime<b.postTime)?1: -1)
 
-        console.log(tmp)
+        // console.log(tmp)
         this.setState({
             content: "Profile", 
             otherUserData: tmp

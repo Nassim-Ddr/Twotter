@@ -25,6 +25,7 @@ class Home extends React.Component {
     setMsgList = (newMsgList) => {
         newMsgList.map (m => {
             m.score = m.upvotes.length - m.downvotes.length
+            return 1
         })
         this.setState({
             msgList: newMsgList.sort((a, b) => (a.postTime<b.postTime)?1: -1)

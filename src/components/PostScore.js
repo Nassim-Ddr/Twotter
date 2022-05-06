@@ -20,7 +20,7 @@ class PostScore extends React.Component {
                         {this.props.ud === 1 && <ArrowUpwardSharp color='primary' />}
                         {this.props.ud !== 1 && <ArrowUpwardSharp />}
                     </IconButton>
-                    {kFormatter(this.props.score)}
+                    {kFormatter(Number(this.props.score))}
                     <IconButton onClick={this.props.downvote}>
                         {this.props.ud === 2 && <ArrowDownwardSharp color='primary' />}
                         {this.props.ud !== 2  && <ArrowDownwardSharp />}

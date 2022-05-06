@@ -1,7 +1,7 @@
 import { Avatar, Box } from '@mui/material';
 import React from 'react';
 
-import PostHeaderBtn from './PostHeaderBtn';
+// import PostHeaderBtn from './PostHeaderBtn';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -28,7 +28,7 @@ class PostHeader extends React.Component {
                     {CommentPostedTime(new Date() - this.props.postData.postTime) + " ago"}
                 </div>
                 <div className='BtnContainer'>
-                    <PostHeaderBtn currentUser={this.props.userData.id === this.props.postData.userID ? "TRUE" : ""} />
+                    {/* <PostHeaderBtn currentUser={this.props.userData.id === this.props.postData.userID ? "TRUE" : ""} /> */}
                 </div>
             </Box>
         );
